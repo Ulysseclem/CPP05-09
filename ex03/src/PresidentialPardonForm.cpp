@@ -6,7 +6,7 @@
 /*   By: uclement <uclement@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/26 14:47:53 by uclement          #+#    #+#             */
-/*   Updated: 2024/02/27 14:00:11 by uclement         ###   ########.fr       */
+/*   Updated: 2024/02/26 16:24:22 by uclement         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 
 //Constructor
-PresidentialPardonForm::PresidentialPardonForm(const std::string target) : AForm("PresidentialPardonForm", 25, 5), _target(target)
+PresidentialPardonForm::PresidentialPardonForm(const std::string target) : AForm("PresidentialPardonForm", 72, 45), _target(target)
 {
 	if (DEBUG)
 		std::cout << "PresidentialPardonForm "<< GREEN << " Constructed" << NC << std::endl;

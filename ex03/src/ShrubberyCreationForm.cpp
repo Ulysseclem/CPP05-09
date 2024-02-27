@@ -6,7 +6,7 @@
 /*   By: uclement <uclement@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/26 14:47:53 by uclement          #+#    #+#             */
-/*   Updated: 2024/02/27 14:03:12 by uclement         ###   ########.fr       */
+/*   Updated: 2024/02/27 11:31:15 by uclement         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,6 +59,5 @@ void ShrubberyCreationForm::execute(Bureaucrat const & executor) const
 		outputFile  << "   ||     ||   " << std::endl;
 		outputFile.close();
 	}
-	std::cout << "a Forest has been created !" <<  std::endl;
 	
 }

@@ -6,7 +6,7 @@
 /*   By: uclement <uclement@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/23 14:22:57 by uclement          #+#    #+#             */
-/*   Updated: 2024/02/27 14:06:31 by uclement         ###   ########.fr       */
+/*   Updated: 2024/02/26 16:25:03 by uclement         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -118,7 +118,7 @@ void Bureaucrat::signForm(AForm& AForm)
 	}
 	catch(const std::exception& e)
 	{
-		std::cout << getName() << " couldn't  sign " << CYAN << AForm.getName() << NC << " because " << e.what() << " (catch)" << std::endl;
+		std::cout << getName() << " couldn't  sign " << CYAN << AForm.getName() << NC << " because " << e.what() << std::endl;
 	}
 }
 
@@ -126,12 +126,12 @@ void Bureaucrat::executeForm(AForm const & AForm)
 {
 	try
 	{
-		std::cout << getName() << " try to execute " << CYAN << AForm.getName() << NC << std::endl;
+		std::cout << getName() << " Executed " << CYAN << AForm.getName() << NC << std::endl;
 		AForm.execute(*this);
 	}
 	catch(const std::exception& e)
 	{
-		std::cout << getName() << " couldn't  execute " << CYAN << AForm.getName() << NC << " because " << e.what() << " (catch)" <<std::endl;
+		std::cout << getName() << " couldn't  execute " << CYAN << AForm.getName() << NC << " because " << e.what() << std::endl;
 	}
 		
 }
