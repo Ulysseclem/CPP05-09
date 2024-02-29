@@ -6,7 +6,7 @@
 /*   By: uclement <uclement@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/23 14:22:57 by uclement          #+#    #+#             */
-/*   Updated: 2024/02/27 14:06:31 by uclement         ###   ########.fr       */
+/*   Updated: 2024/02/27 15:21:43 by uclement         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -133,5 +133,4 @@ void Bureaucrat::executeForm(AForm const & AForm)
 	{
 		std::cout << getName() << " couldn't  execute " << CYAN << AForm.getName() << NC << " because " << e.what() << " (catch)" <<std::endl;
 	}
-		
 }

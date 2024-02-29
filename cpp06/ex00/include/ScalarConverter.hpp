@@ -6,7 +6,7 @@
 /*   By: uclement <uclement@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/23 14:22:05 by uclement          #+#    #+#             */
-/*   Updated: 2024/02/27 15:56:54 by uclement         ###   ########.fr       */
+/*   Updated: 2024/02/29 14:41:57 by uclement         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,9 @@
 
 #include <string>
 #include <iostream>
+#include <sstream>
+#include <limits>
+#include <ctype.h>
 #include "Color.hpp"
 
 #ifndef DEBUG
@@ -33,7 +36,7 @@ class ScalarConverter
 		~ScalarConverter();
 
 		//Members
-		static void convert(std::string value);
+		static void convert(const std::string& value);
 };
 
 #endif

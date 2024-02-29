@@ -6,7 +6,7 @@
 /*   By: uclement <uclement@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/26 14:47:53 by uclement          #+#    #+#             */
-/*   Updated: 2024/02/26 16:17:28 by uclement         ###   ########.fr       */
+/*   Updated: 2024/02/27 15:22:08 by uclement         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,7 @@ RobotomyRequestForm::~RobotomyRequestForm()
 
 void RobotomyRequestForm::execute(Bureaucrat const & executor) const
 {
+	srand(time(NULL));
 	if (!getIsSigned())
 		throw FormNotSignedException();
 	if (executor.getGrade() > getGradeExecute())

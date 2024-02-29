@@ -6,7 +6,7 @@
 /*   By: uclement <uclement@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/26 14:41:41 by uclement          #+#    #+#             */
-/*   Updated: 2024/02/26 16:15:10 by uclement         ###   ########.fr       */
+/*   Updated: 2024/02/27 15:22:43 by uclement         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 #define ROBOTOMYREQUESTFROM_HPP
 
 #include "AForm.hpp"
+#include <time.h>
 
 class RobotomyRequestForm : public AForm
 {
