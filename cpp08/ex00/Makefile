@@ -1,9 +1,8 @@
-NAME = Base
+NAME = EasyFind
 
 INCS        := include
 
-SRC		=	main.cpp \
-			src/Base.cpp
+SRC		=	main.cpp
 
 OBJS 	= $(SRC:.c=.o)
 
