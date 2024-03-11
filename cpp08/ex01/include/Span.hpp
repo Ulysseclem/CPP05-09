@@ -6,7 +6,7 @@
 /*   By: ulysse <ulysse@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/04 15:47:15 by ulysse            #+#    #+#             */
-/*   Updated: 2024/03/10 18:03:04 by ulysse           ###   ########.fr       */
+/*   Updated: 2024/03/11 16:07:25 by ulysse           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,26 +18,28 @@
 #include <iostream>
 #include <exception>
 #include <vector>
-#include <list>
-#include <deque>
 #include <algorithm>
 #include <iterator>
-#include <time.h> 
+#include <time.h>
+#include "Color.hpp"
 
 // template <typename T>
 class Span
 {
 	private :
-		const unsigned int	_size;
+		unsigned int	_size;
 		std::vector<int> 	_container;
+		Span();
 
 	public :
 	//Canonical orthodox constructor form
-		Span();
 		Span(const unsigned int size);
 		~Span();
 		Span(const Span& obj);
 		Span& operator=(const Span& obj);
+
+	//Getters
+		const std::vector<int>& getContainer() const;
 	
 	//Member function
 		void addNumber(int nbr);
@@ -56,5 +58,8 @@ class Span
 			}
 	};
 };
+
+std::ostream& operator<<(std::ostream& os, const Span& obj);
+
 
 #endif

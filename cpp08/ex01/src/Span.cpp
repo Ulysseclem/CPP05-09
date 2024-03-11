@@ -6,7 +6,7 @@
 /*   By: ulysse <ulysse@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/10 16:58:58 by ulysse            #+#    #+#             */
-/*   Updated: 2024/03/10 18:00:38 by ulysse           ###   ########.fr       */
+/*   Updated: 2024/03/11 16:07:40 by ulysse           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,10 @@
 Span::Span(const unsigned int size) : _size(size) 
 {
     if (DEBUG)
-        std::cout << "Span Constructed" << std::endl;
+        std::cout << "Span"  << GREEN << " Constructed" << NC << std::endl;
 }
 
-Span::Span(const Span& obj) : _size(obj._size)
+Span::Span(const Span& obj) : _size(obj._size), _container(obj._container)
 {
     if (DEBUG)
         std::cout << "Span copied" << std::endl; 
@@ -27,7 +27,8 @@ Span::Span(const Span& obj) : _size(obj._size)
 
 Span &Span::operator=(const Span& obj)
 {
-    (void)obj;
+    _size = obj._size;
+    _container = obj._container;
     if (DEBUG)
         std::cout << "Span assigned" << std::endl; 
     return *this;
@@ -35,7 +36,7 @@ Span &Span::operator=(const Span& obj)
 
 Span::~Span()
 {
-     std::cout << "Span destroyed" << std::endl;     
+     std::cout << "Span"  << RED << " destroyed" << NC << std::endl;     
 }
 
 //Member function
@@ -56,30 +57,43 @@ void Span::addNumber(std::vector<int>::const_iterator begin, std::vector<int>::c
 
 int	Span::longestSpan()
 {
-    int smallest = 1000000;
-    int biggest = 0;
+    if (_container.size() < 2)
+        throw SpanSizeException();
 
-    for (std::vector<int>::iterator  i = _container.begin(); i != _container.end(); i++)
-    {
-        if (*i < smallest)
-            smallest = *i;
-        if (*i > biggest)
-            biggest = *i;
-    }
+    int smallest = *std::min_element(_container.begin(), _container.end());
+    int biggest = *std::max_element(_container.begin(), _container.end());
+    
     return (biggest - smallest);
 }
 
 int	Span::shortestSpan()
 {
-    int spanSize = 1000000;
+    if (_container.size() < 2)
+        throw SpanSizeException();
 
-    for (std::vector<int>::iterator j = _container.begin();  j != _container.end(); j++)
+    std::vector<int> copyVector (_container.size());
+    std::copy(_container.begin(), _container.end(), copyVector.begin());
+    std::sort(copyVector.begin(), copyVector.end());
+    int spanSize =*(copyVector.begin() + 1) - *copyVector.begin();
+    for (std::vector<int>::iterator  i = copyVector.begin(); i != copyVector.end() -1; i++)
     {
-        for (std::vector<int>::iterator  i = _container.begin(); i != _container.end(); i++)
-        {
-            if (*j - *i > -1 && i != j && spanSize > *j - *i)
-                spanSize = *j - *i;
-        }
+        if (*(i + 1) - *i < spanSize)
+            spanSize = *(i + 1) - *i;
     }
-    return spanSize;
+    return (spanSize);
 }
+
+// Getters
+const std::vector<int>& Span::getContainer() const
+{
+    return _container;
+}
+
+//Overload
+std::ostream& operator<<(std::ostream& os, const Span& obj)
+{
+    for (std::vector<int>::const_iterator it = obj.getContainer().begin(); it != obj.getContainer().end(); it++)
+        os << *it << " ";
+    return os;
+}
+
