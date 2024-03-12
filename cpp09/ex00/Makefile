@@ -1,9 +1,8 @@
-NAME = Span
+NAME = bct
 
 INCS        := include
 
 SRC		=	main.cpp \
-			src/Span.cpp
 
 OBJS 	= $(SRC:.c=.o)
 
