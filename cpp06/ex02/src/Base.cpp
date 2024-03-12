@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Base.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ulysse <ulysse@student.42.fr>              +#+  +:+       +#+        */
+/*   By: uclement <uclement@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/04 14:29:37 by ulysse            #+#    #+#             */
-/*   Updated: 2024/03/04 14:46:46 by ulysse           ###   ########.fr       */
+/*   Updated: 2024/03/12 11:27:31 by uclement         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,3 @@ Base::~Base()
 {
     std::cout << "Destructed" << std::endl;
 }
-
-// Base * Base::generate(void)
-// {
-//     return new A;
-// }

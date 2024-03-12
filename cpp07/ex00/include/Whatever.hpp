@@ -3,15 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   Whatever.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ulysse <ulysse@student.42.fr>              +#+  +:+       +#+        */
+/*   By: uclement <uclement@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/04 15:47:15 by ulysse            #+#    #+#             */
-/*   Updated: 2024/03/04 16:19:53 by ulysse           ###   ########.fr       */
+/*   Updated: 2024/03/12 11:56:21 by uclement         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef WHATERVER_HPP
-#define WAHTEVER_HPP
+#ifndef WHATEVER_HPP
+#define WHATEVER_HPP
 
 #include "Color.hpp"
 #include <iostream>

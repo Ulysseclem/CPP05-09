@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ulysse <ulysse@student.42.fr>              +#+  +:+       +#+        */
+/*   By: uclement <uclement@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/23 14:23:19 by uclement          #+#    #+#             */
-/*   Updated: 2024/03/04 16:45:02 by ulysse           ###   ########.fr       */
+/*   Updated: 2024/03/12 11:59:16 by uclement         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,27 +16,30 @@
 
 class Test
 {
-    public:
-        Test( int n ) : _n(n) {}
-        bool operator==( Test const & rhs ) const { return (this->_n == rhs._n); }
-        bool operator!=( Test const & rhs ) const { return (this->_n != rhs._n); }
-        bool operator>( Test const & rhs ) const { return (this->_n > rhs._n); }
-        bool operator<( Test const & rhs ) const { return (this->_n < rhs._n); }
-        bool operator>=( Test const & rhs ) const { return (this->_n >= rhs._n); }
-        bool operator<=( Test const & rhs ) const { return (this->_n <= rhs._n); }
-        int get( void ) const { return this->_n; }
     private:
-        int _n;
+        int _nbr;
+		
+    public:
+        Test( int n ) : _nbr(n) {}
+        bool operator==( Test const & obj ) const { return (this->_nbr == obj._nbr); }
+        bool operator!=( Test const & obj ) const { return (this->_nbr != obj._nbr); }
+        bool operator>( Test const & obj ) const { return (this->_nbr > obj._nbr); }
+        bool operator<( Test const & obj ) const { return (this->_nbr < obj._nbr); }
+        bool operator>=( Test const & obj ) const { return (this->_nbr >= obj._nbr); }
+        bool operator<=( Test const & obj ) const { return (this->_nbr <= obj._nbr); }
+        int get( void ) const { return this->_nbr; }
 };
 
-std::ostream & operator<<( std::ostream & os, Test const & rhs ) { os << rhs.get(); return os; }
+std::ostream & operator<<( std::ostream & os, Test const & obj ) { os << obj.get(); return os; }
 
 int main()
 {
 	{
+	std::cout << WHITE_B << "MANDATORY INT" << NC << "\n";
+	
 	int a = 2;
 	int b = 3;
-	swap( a, b );
+	::swap( a, b );
 	std::cout << "a = " << a << ", b = " << b << std::endl;
 	std::cout << "min( a, b ) = " << ::min( a, b ) << std::endl;
 	std::cout << "max( a, b ) = " << ::max( a, b ) << std::endl;
@@ -48,6 +51,24 @@ int main()
 	std::cout << "max( c, d ) = " << ::max( c, d ) << std::endl;
 	}
 	{
+	std::cout << "\n" << WHITE_B << "MANDATORY FLOAT" << NC << "\n";
+
+	float a = 2;
+	float b = 3;
+	::swap( a, b );
+	std::cout << "a = " << a << ", b = " << b << std::endl;
+	std::cout << "min( a, b ) = " << ::min( a, b ) << std::endl;
+	std::cout << "max( a, b ) = " << ::max( a, b ) << std::endl;
+	std::string c = "chaine1";
+	std::string d = "chaine2";
+	::swap(c, d);
+	std::cout << "c = " << c << ", d = " << d << std::endl;
+	std::cout << "min( c, d ) = " << ::min( c, d ) << std::endl;
+	std::cout << "max( c, d ) = " << ::max( c, d ) << std::endl;
+	}
+	{
+	std::cout << "\n" <<WHITE_B << "TEST CLASS WITH OVERLOADED OPERATOR" << NC << "\n";
+
 	Test a(2), b(4), c(7);
     if (a != c)
         std::cout << "a != c" << std::endl;

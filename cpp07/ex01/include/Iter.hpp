@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Iter.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ulysse <ulysse@student.42.fr>              +#+  +:+       +#+        */
+/*   By: uclement <uclement@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/04 15:47:15 by ulysse            #+#    #+#             */
-/*   Updated: 2024/03/04 17:11:43 by ulysse           ###   ########.fr       */
+/*   Updated: 2024/03/12 12:13:55 by uclement         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,14 +17,13 @@
 #include <iostream>
 
 template <typename T>
-void increPrint (T x)
+void increPrint (T const& x)
 {
-	x++;
 	std::cout << x << std::endl;
 }
 
 template <typename ptr>
-void iter (ptr *a, int b, void (*f)(ptr))
+void iter (ptr *a, int b, void (*f)(const ptr&))
 {
 	int i = 0;
 	while (i < b)

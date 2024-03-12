@@ -6,7 +6,7 @@
 /*   By: uclement <uclement@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/23 14:23:19 by uclement          #+#    #+#             */
-/*   Updated: 2024/03/06 16:42:06 by uclement         ###   ########.fr       */
+/*   Updated: 2024/03/12 13:49:17 by uclement         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,16 @@
 
 int main()
 {
+	Array<int> listC;
+	std::cout << listC.getArray() << "\n";
 	Array<int> listA(5);
 	std::cout << listA.getArray() << "\n";
 	for (unsigned int i = 0; i < listA.size(); i++)
 		listA[i] = (i) * 2;
 
+
 	Array<int> listB(listA);
+
 	for (unsigned int i = 0; i < listB.size(); i++)
 		listB[i] = (i) * -4;
 	std::cout << "\nList B \n";
@@ -40,6 +44,7 @@ int main()
 	{
 		std::cerr << e.what() << "\n";
 	}
+	
 	try
 	{
 		std::cout << listA[8] << "\n";
@@ -48,6 +53,5 @@ int main()
 	{
 		std::cerr << e.what() << "\n";
 	}
-	Array<int> listC;
-	std::cout << listC.getArray() << "\n";
+
 }
