@@ -1,65 +1,54 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Span.hpp                                           :+:      :+:    :+:   */
+/*   BitcoinExchange.hpp                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ulysse <ulysse@student.42.fr>              +#+  +:+       +#+        */
+/*   By: uclement <uclement@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/04 15:47:15 by ulysse            #+#    #+#             */
-/*   Updated: 2024/03/11 16:07:25 by ulysse           ###   ########.fr       */
+/*   Updated: 2024/03/13 13:41:45 by uclement         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SPAN_HPP
-#define SPAN_HPP
+#ifndef BITCOINEXCHANGE_HPP
+#define BITCOINEXCHANGE_HPP
 
 #define DEBUG true
 
 #include <iostream>
+#include <string>
 #include <exception>
-#include <vector>
+#include <map>
 #include <algorithm>
 #include <iterator>
-#include <time.h>
+#include <cstdlib>
+#include <fstream> 
+#include <sstream> 
 #include "Color.hpp"
 
 // template <typename T>
-class Span
+class BitcointExchange
 {
 	private :
-		unsigned int	_size;
-		std::vector<int> 	_container;
-		Span();
+		const std::map<std::string, float> _data;
 
 	public :
 	//Canonical orthodox constructor form
-		Span(const unsigned int size);
-		~Span();
-		Span(const Span& obj);
-		Span& operator=(const Span& obj);
+		BitcointExchange();
+		BitcointExchange(std::map<std::string, float> data);
+		~BitcointExchange();
+		// BitCointExchange(const BitCointExchange& obj);
+		// BitCointExchange& operator=(const BitCointExchange& obj);
 
 	//Getters
-		const std::vector<int>& getContainer() const;
 	
 	//Member function
-		void addNumber(int nbr);
-		void addNumber(std::vector<int>::const_iterator begin, std::vector<int>::const_iterator end);
-		int	shortestSpan();
-		int	longestSpan();
-
+	static bool ReadInsert(std::ifstream& File, std::map<std::string, float>& map);
 
 	//Exception override
-	class SpanSizeException : public std::exception 
-	{
-		public:
-			const char *what() const throw()
-			{
-				return "Exception: Span size issue";
-			}
-	};
 };
 
-std::ostream& operator<<(std::ostream& os, const Span& obj);
+// std::ostream& operator<<(std::ostream& os, const Span& obj);
 
 
 #endif

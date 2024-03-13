@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ulysse <ulysse@student.42.fr>              +#+  +:+       +#+        */
+/*   By: uclement <uclement@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/23 14:23:19 by uclement          #+#    #+#             */
-/*   Updated: 2024/03/11 16:10:02 by ulysse           ###   ########.fr       */
+/*   Updated: 2024/03/13 16:27:05 by uclement         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,7 @@ int main()
             Span myVector(10000);
             
             srand (time(NULL));
-            std::generate( bigVector.begin(), bigVector.end(), std::rand );
+            std::generate( bigVector.begin(), bigVector.end(), std::rand);
 
             myVector.addNumber(bigVector.begin(), bigVector.end());
             std::cout <<  "Shortest Span " <<myVector.shortestSpan() << std::endl;

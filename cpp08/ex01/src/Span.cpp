@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Span.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ulysse <ulysse@student.42.fr>              +#+  +:+       +#+        */
+/*   By: uclement <uclement@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/10 16:58:58 by ulysse            #+#    #+#             */
-/*   Updated: 2024/03/11 16:07:40 by ulysse           ###   ########.fr       */
+/*   Updated: 2024/03/13 16:25:50 by uclement         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ Span::Span(const unsigned int size) : _size(size)
 Span::Span(const Span& obj) : _size(obj._size), _container(obj._container)
 {
     if (DEBUG)
-        std::cout << "Span copied" << std::endl; 
+        std::cout << "Span "  << GREEN <<  "copied" << NC << std::endl; 
     *this = obj;
 }
 
@@ -29,8 +29,6 @@ Span &Span::operator=(const Span& obj)
 {
     _size = obj._size;
     _container = obj._container;
-    if (DEBUG)
-        std::cout << "Span assigned" << std::endl; 
     return *this;
 }
 

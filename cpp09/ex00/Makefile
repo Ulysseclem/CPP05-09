@@ -1,8 +1,9 @@
-NAME = bct
+NAME = btc
 
 INCS        := include
 
 SRC		=	main.cpp \
+			src/BitcoinExchange.cpp
 
 OBJS 	= $(SRC:.c=.o)
 

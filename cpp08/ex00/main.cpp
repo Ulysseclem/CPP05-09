@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ulysse <ulysse@student.42.fr>              +#+  +:+       +#+        */
+/*   By: uclement <uclement@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/23 14:23:19 by uclement          #+#    #+#             */
-/*   Updated: 2024/03/10 16:47:54 by ulysse           ###   ########.fr       */
+/*   Updated: 2024/03/13 16:14:24 by uclement         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 int main()
 {  
+	std::cout << "\n" << WHITE_B << "VECTOR" << NC << "\n";
     std::vector<int> test;
 
     test.push_back(10);
@@ -37,6 +38,7 @@ int main()
         std::cerr << e.what() << std::endl;
     }
     
+	std::cout << "\n" << WHITE_B << "LIST" << NC << "\n";
 
     std::list<int> lst;
 
@@ -60,6 +62,8 @@ int main()
     {
         std::cerr << e.what() << std::endl;
     }
+
+	std::cout << "\n" << WHITE_B << "DEQUE" << NC << "\n";
 
     std::deque<int> deque;
 

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   MutantStack.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ulysse <ulysse@student.42.fr>              +#+  +:+       +#+        */
+/*   By: uclement <uclement@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/04 15:47:15 by ulysse            #+#    #+#             */
-/*   Updated: 2024/03/11 17:17:08 by ulysse           ###   ########.fr       */
+/*   Updated: 2024/03/13 16:38:04 by uclement         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@
 #include <stack>
 #include <algorithm>
 #include <iterator>
+#include <list>
+#include "Color.hpp"
 
 template <typename T>
 class MutantStack : public std::stack<T>

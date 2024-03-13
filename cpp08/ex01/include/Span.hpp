@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Span.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ulysse <ulysse@student.42.fr>              +#+  +:+       +#+        */
+/*   By: uclement <uclement@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/04 15:47:15 by ulysse            #+#    #+#             */
-/*   Updated: 2024/03/11 16:07:25 by ulysse           ###   ########.fr       */
+/*   Updated: 2024/03/13 16:24:56 by uclement         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,6 +60,5 @@ class Span
 };
 
 std::ostream& operator<<(std::ostream& os, const Span& obj);
-
 
 #endif

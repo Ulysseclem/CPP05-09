@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   easyfind.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ulysse <ulysse@student.42.fr>              +#+  +:+       +#+        */
+/*   By: uclement <uclement@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/04 15:47:15 by ulysse            #+#    #+#             */
-/*   Updated: 2024/03/10 16:46:07 by ulysse           ###   ########.fr       */
+/*   Updated: 2024/03/13 16:13:29 by uclement         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@
 #include <deque>
 #include <algorithm>
 #include <iterator>
+#include "Color.hpp"
 
 
 
