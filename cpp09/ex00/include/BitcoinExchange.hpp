@@ -6,7 +6,7 @@
 /*   By: uclement <uclement@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/04 15:47:15 by ulysse            #+#    #+#             */
-/*   Updated: 2024/03/13 13:41:45 by uclement         ###   ########.fr       */
+/*   Updated: 2024/03/20 16:29:01 by uclement         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,12 +30,12 @@
 class BitcointExchange
 {
 	private :
-		const std::map<std::string, float> _data;
+		const std::map<int, float> _data;
 
 	public :
 	//Canonical orthodox constructor form
 		BitcointExchange();
-		BitcointExchange(std::map<std::string, float> data);
+		BitcointExchange(std::map<int, float> data);
 		~BitcointExchange();
 		// BitCointExchange(const BitCointExchange& obj);
 		// BitCointExchange& operator=(const BitCointExchange& obj);
@@ -43,7 +43,13 @@ class BitcointExchange
 	//Getters
 	
 	//Member function
-	static bool ReadInsert(std::ifstream& File, std::map<std::string, float>& map);
+	static bool ReadInsert(std::ifstream& File, std::map<int, float>& map);
+	static bool isDateValid(int year, int month, int day);
+	static int	dateToInt(const std::string& date);
+	static float myStof(std::string value);
+	static bool isCoefValid(std::string stringNbr);
+	static bool validateFormat(const std::string& input, char sep);
+
 
 	//Exception override
 };
